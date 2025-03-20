@@ -11,10 +11,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Label } from "@/components/ui/label"
 import DashboardLayout from "@/components/dashboard-layout"
 import { Bot, Loader2 } from "lucide-react"
-import { toast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function NewBotPage() {
   const router = useRouter()
+  const { toast } = useToast() // Correctly use the useToast hook at the component level
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
